@@ -1,7 +1,7 @@
 import streamlit as st
 from simpleai.search import CspProblem, backtrack
 
-header = st.beta_container()
+header = st.container()
 
 with header:
     st.title("Taak 1 AI - Bent Melis (r0831245)")
