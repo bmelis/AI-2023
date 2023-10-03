@@ -1,9 +1,10 @@
 import streamlit as st
 from simpleai.search import CspProblem, backtrack
+st.title("Taak 1 AI - Bent Melis - r0831245")
 
-input_first = input("Enter the first word: ").upper()
-input_sec = input("Enter the second word: ").upper()
-input_result = input("Enter the result word: ").upper()
+input_first = st.text_input("Enter the first word: ").upper()
+input_sec = st.text_input("Enter the second word: ").upper()
+input_result = st.text_input("Enter the result word: ").upper()
 
 variables = tuple(input_first) + tuple(input_sec) + tuple(input_result)
 st.text(input_first)
