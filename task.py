@@ -1,4 +1,10 @@
+import streamlit as st
 from simpleai.search import CspProblem, backtrack
+
+header = st.beta_container()
+
+with header:
+    st.title("Taak 1 AI - Bent Melis (r0831245)")
 
 input_first = input("Enter the first word: ").upper()
 input_sec = input("Enter the second word: ").upper()
