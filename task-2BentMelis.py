@@ -49,7 +49,7 @@ if selection == 'Decision Tree Classifier':
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text(accuracy)
+    st.text("accuracy: " + accuracy)
 
 elif selection == 'Support vector machine (SVM)':
     # SVC
@@ -63,7 +63,7 @@ elif selection == 'Support vector machine (SVM)':
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text("Accuracy:", accuracy)
+    st.text("Accuracy: " + accuracy)
 
 else:
     #Guassian processes:
@@ -78,4 +78,4 @@ else:
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text("Accuracy:", accuracy)
+    st.text("Accuracy: "+ accuracy)
