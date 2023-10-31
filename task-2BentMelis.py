@@ -15,7 +15,7 @@ with header:
     st.title("Taak 1 AI - Bent Melis (r0831245)")
 
 selection = st.selectbox(
-    'Select your sklearn technique:',
+    'Select the ML techniques from the scikitLearn library you want to test:',
     ('Decision Tree Classifier', 'Support vector machine (SVM)','Gaussian Processes')
 )
 
@@ -33,6 +33,16 @@ y = heart_failure_df[['DEATH_EVENT']]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 if selection == 'Decision Tree Classifier':
+    st.text('')
+
+    st.text('Some extra info:')
+    st.text('A Decision Tree Classifier is a type of supervised learning algorithm that is mostly used for classification problems.') 
+    st.text('It works for both categorical and continuous input and output variables. In this technique,')
+    st.text('we split the population or sample into two or more homogeneous sets (or sub-populations) based on the most significant splitter/differentiator in input variables')
+
+    st.text('')
+
+    st.text("I have used this technique and after testing the accuracy was:")
 
     # DecisionTreeClassifier
     clf = DecisionTreeClassifier()
@@ -49,9 +59,19 @@ if selection == 'Decision Tree Classifier':
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text("Accuracy: " + str(accuracy))
+    st.text(str(accuracy))
 
 elif selection == 'Support vector machine (SVM)':
+    st.text('')
+
+    st.text('Some extra info:')
+    st.text('SVMs are a set of supervised learning methods used for classification, regression and outliers detection. They are effective in high') 
+    st.text('dimensional spaces and best suited for problems with complex domains where there are clear margins of separation in the data. To correctly')
+    st.text('classify the data, this method finds the hyperplane in an N-dimensional space that distinctly classifies the data points.')
+
+    st.text('')
+
+    st.text("I have used this technique and after testing the accuracy was:")
     # SVC
     svm_classifier = SVC()
     svm_classifier.fit(X_train, y_train)
@@ -63,9 +83,19 @@ elif selection == 'Support vector machine (SVM)':
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text("Accuracy: " + str(accuracy))
+    st.text(str(accuracy))
 
 else:
+    st.text('')
+
+    st.text('Some extra info:')
+    st.text('Gaussian Processes (GP) are a generic supervised learning method designed to solve regression and probabilistic classification problems.') 
+    st.text('They are highly flexible, and can model various kinds of data. Gaussian Processes provide a principled, practical, probabilistic approach to')
+    st.text('learning in kernel machines.')
+
+    st.text('')
+
+    st.text("I have used this technique and after testing the accuracy was:")
     #Guassian processes:
     gp_classifier = GaussianProcessClassifier(kernel=RBF())
     gp_classifier.fit(X_train, y_train)
@@ -78,4 +108,4 @@ else:
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    st.text("Accuracy: " + str(accuracy))
+    st.text(str(accuracy))
