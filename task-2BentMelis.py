@@ -36,9 +36,11 @@ if selection == 'Decision Tree Classifier':
     st.text('')
 
     st.text('Some extra info:')
-    st.text('A Decision Tree Classifier is a type of supervised learning algorithm that is mostly used for classification problems.') 
-    st.text('It works for both categorical and continuous input and output variables. In this technique,')
-    st.text('we split the population or sample into two or more homogeneous sets (or sub-populations) based on the most significant splitter/differentiator in input variables')
+    st.text('A Decision Tree Classifier is a type of supervised learning algorithm that is')
+    st.text('mostly used for classification problems. It works for both categorical and')
+    st.text('continuous input and output variables. In this technique, we split the population')
+    st.text(' or sample into two or more homogeneous sets (or sub-populations) based on the most')
+    st.text('significant splitter/differentiator in input variables')
 
     st.text('')
 
@@ -91,9 +93,10 @@ else:
     st.text('')
 
     st.text('Some extra info:')
-    st.text('Gaussian Processes (GP) are a generic supervised learning method designed to solve regression and probabilistic classification problems.') 
-    st.text('They are highly flexible, and can model various kinds of data. Gaussian Processes provide a principled, practical, probabilistic approach to')
-    st.text('learning in kernel machines.')
+    st.text('Gaussian Processes (GP) are a generic supervised learning method designed to solve')
+    st.text('regression and probabilistic classification problems. They are highly flexible,') 
+    st.text('and can model various kinds of data. Gaussian Processes provide a principled, practical,')
+    st.text(' probabilistic approach to learning in kernel machines.')
 
     st.text('')
 
