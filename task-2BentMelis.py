@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 header = st.container()
 
 with header:
-    st.title("Taak 1 AI - Bent Melis (r0831245)")
+    st.title("Taak 2 AI - Bent Melis (r0831245)")
 
 selection = st.selectbox(
     'Select the ML techniques from the scikitLearn library you want to test:',
