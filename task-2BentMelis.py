@@ -95,8 +95,8 @@ else:
     st.text('Some extra info:')
     st.text('Gaussian Processes (GP) are a generic supervised learning method designed to solve')
     st.text('regression and probabilistic classification problems. They are highly flexible,') 
-    st.text('and can model various kinds of data. Gaussian Processes provide a principled, practical,')
-    st.text(' probabilistic approach to learning in kernel machines.')
+    st.text('and can model various kinds of data. Gaussian Processes provide a principled,')
+    st.text('practical, probabilistic approach to learning in kernel machines.')
 
     st.text('')
 
