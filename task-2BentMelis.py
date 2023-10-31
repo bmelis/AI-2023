@@ -65,9 +65,11 @@ elif selection == 'Support vector machine (SVM)':
     st.text('')
 
     st.text('Some extra info:')
-    st.text('SVMs are a set of supervised learning methods used for classification, regression and outliers detection. They are effective in high') 
-    st.text('dimensional spaces and best suited for problems with complex domains where there are clear margins of separation in the data. To correctly')
-    st.text('classify the data, this method finds the hyperplane in an N-dimensional space that distinctly classifies the data points.')
+    st.text('SVMs are a set of supervised learning methods used for classification, regression') 
+    st.text(' and outliers detection. They are effective in high dimensional spaces and best') 
+    st.text('suited for problems with complex domains where there are clear margins of')
+    st.text('separation in the data. To correctly classify the data, this method finds the')
+    st.text('hyperplane in an N-dimensional space that distinctly classifies the data points.')
 
     st.text('')
 
