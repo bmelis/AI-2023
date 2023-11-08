@@ -59,7 +59,7 @@ if selection == 'Decision Tree Classifier':
     accuracy = accuracy_score(y_test, y_pred)
 
     st.text(str(accuracy))
-    st.text("Root Mean Squared Error =", str(round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2)))
+    st.text("Root Mean Squared Error =", str(np.sqrt(metrics.mean_squared_error(y_test, y_pred))))
 
 
 elif selection == 'Support vector machine (SVM)':
@@ -87,7 +87,7 @@ elif selection == 'Support vector machine (SVM)':
     accuracy = accuracy_score(y_test, y_pred)
 
     st.text(str(accuracy))
-    st.text("Root Mean Squared Error =", str(round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2)))
+    st.text("Root Mean Squared Error =", str(np.sqrt(metrics.mean_squared_error(y_test, y_pred))))
 
 else:
     st.text('')
@@ -112,6 +112,6 @@ else:
     y_pred = gp_classifier.predict(X_test)
 
     accuracy = accuracy_score(y_test, y_pred)
-
+    
     st.text(str(accuracy))
-    st.text("Root Mean Squared Error =", str(round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2)))
+    st.text("Root Mean Squared Error =", str(np.sqrt(metrics.mean_squared_error(y_test, y_pred))))
