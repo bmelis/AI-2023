@@ -8,6 +8,7 @@ from sklearn.gaussian_process import GaussianProcessClassifier
 from sklearn.gaussian_process.kernels import RBF
 import category_encoders as ce
 from sklearn.metrics import accuracy_score
+from sklearn import metrics
 
 header = st.container()
 
@@ -20,10 +21,6 @@ selection = st.selectbox(
 )
 
 heart_failure_df = pd.read_csv("resources/heart_failure_clinical_records_dataset.csv", sep=',')
-
-
-print(heart_failure_df.shape)
-heart_failure_df.info()
 
 feature_cols = ['age', 'anaemia', 'creatinine_phosphokinase','diabetes','ejection_fraction', 'high_blood_pressure', 'platelets','serum_creatinine', 'sex', 'smoking','time']
 
@@ -62,6 +59,8 @@ if selection == 'Decision Tree Classifier':
     accuracy = accuracy_score(y_test, y_pred)
 
     st.text(str(accuracy))
+    st.text("Root Mean Squared Error =", round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2))
+
 
 elif selection == 'Support vector machine (SVM)':
     st.text('')
@@ -88,6 +87,7 @@ elif selection == 'Support vector machine (SVM)':
     accuracy = accuracy_score(y_test, y_pred)
 
     st.text(str(accuracy))
+    ts.text("Root Mean Squared Error =", round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2))
 
 else:
     st.text('')
@@ -114,3 +114,4 @@ else:
     accuracy = accuracy_score(y_test, y_pred)
 
     st.text(str(accuracy))
+    st.text("Root Mean Squared Error =", round(np.sqrt(metrics.mean_squared_error(y_test, y_pred)), 2))
