@@ -18,7 +18,7 @@ from keras.utils import to_categorical
 from keras.preprocessing.image import ImageDataGenerator
 from PIL import Image
 from sklearn.preprocessing import LabelEncoder
-import streamlit as st
+import streamlit as st   
 
 image_path = "resources/data/train_set/drumset_white_background/drumset white background_image_15.jpg"
 image = Image.open(image_path)
@@ -30,10 +30,10 @@ st.text("Laten we beginnen met een kijkje te nemen naar de data, hier is een van
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
-epochs = st.slider("Seleer het aantal epochs:", min_value=1, max_value=7, value=8)
+epochs = st.slider("Selecter het aantal epochs:", min_value=1, max_value=7, value=8)
 
 st.text("Helaas heb ik het aantal epochs moeten limiteren op 8 voor de Streamlit versie.")
-st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties stuurt,")
+st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties,")
 st.text("crashed de applicatie wanneer het begint met het model te trainen.")
 st.text("Daarom gebruik ik hier een model tot max 8 epochs, zodat de essentie wel duidelijk")
 st.text("word.")
