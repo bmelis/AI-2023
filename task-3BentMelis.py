@@ -30,7 +30,7 @@ st.text("Laten we beginnen met een kijkje te nemen naar de data, hier is een van
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
-epochs = st.slider("Selecter het aantal epochs:", min_value=1, max_value=7, value=8)
+epochs = st.slider("Selecteer het aantal epochs:", min_value=1, max_value=7, value=8)
 
 st.text("Helaas heb ik het aantal epochs moeten limiteren op 8 voor de Streamlit versie.")
 st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties,")
