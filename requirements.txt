@@ -88,7 +88,6 @@ pyasn1==0.5.1
 pyasn1-modules==0.3.0
 pycparser==2.21
 PySocks==1.7.1
-python-dotenv==1.0.0
 pywin32==306
 regex==2023.10.3
 requests==2.31.0
