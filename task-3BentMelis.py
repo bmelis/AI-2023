@@ -34,14 +34,12 @@ epochs = st.slider("Select the number of epochs:", min_value=1, max_value=30, va
 
 if st.button("Start Training"):
     st.text("The training has started!")
+
     train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
     test_datagen = ImageDataGenerator(rescale=1./255)
 
     train_ds = test_datagen.flow_from_directory('resources/data/train_set/', target_size=(128, 128), batch_size=32, seed=123, class_mode="categorical")
     val_ds = test_datagen.flow_from_directory('resources/data/test_set/', target_size=(128, 128), batch_size=32, seed=123, class_mode='categorical')
-
-    st.text(train_ds)
-    st.text(val_ds)
 
     model = Sequential()
     model.add(Conv2D(32, (3, 3), input_shape = (128, 128, 3), activation='relu'))
@@ -82,7 +80,7 @@ if st.button("Start Training"):
     st.pyplot(plotLosses(history))
 
     test_loss, test_acc = model.evaluate(val_ds)
-    st.write(f"Validation accuracy: {test_acc}")
+    st.text(f"Validation accuracy: {test_acc}")
 
     y_pred_probabilities = model.predict(val_ds)
     y_pred = np.argmax(y_pred_probabilities, axis=1)
