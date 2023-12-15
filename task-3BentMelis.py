@@ -68,6 +68,7 @@ if st.button("Start Training"):
 
     history = model.fit_generator(train_ds, steps_per_epoch=30, epochs=epochs, validation_data=val_ds)
 
+    test_loss, test_acc = model.evaluate(val_ds)
     def plotLosses(history):
         plt.plot(history.history['loss'])
         plt.plot(history.history['val_loss'])
@@ -76,11 +77,10 @@ if st.button("Start Training"):
         plt.xlabel('epoch')
         plt.legend(['train', 'validation'], loc='upper left')
         plt.show()
-    
+    st.text(f"Validation accuracy: {test_acc}")
     st.pyplot(plotLosses(history))
 
-    test_loss, test_acc = model.evaluate(val_ds)
-    st.text(f"Validation accuracy: {test_acc}")
+
 
     y_pred_probabilities = model.predict(val_ds)
     y_pred = np.argmax(y_pred_probabilities, axis=1)
