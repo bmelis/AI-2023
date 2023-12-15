@@ -19,11 +19,20 @@ from keras.utils import to_categorical
 from keras.preprocessing.image import ImageDataGenerator
 from PIL import Image
 from sklearn.preprocessing import LabelEncoder
+import streamlit as st
+
 
 #hier plot ik een image met de PIL library en de matplotlib library
-plt.imshow(Image.open("resources/data/train_set/drumset_white_background/drumset white background_image_15.jpg"))
-plt.axis('off')
-plt.show()
+# Load the image
+image_path = "resources/data/train_set/drumset_white_background/drumset white background_image_15.jpg"
+image = Image.open(image_path)
+
+# Display the image in Streamlit
+st.image(image, use_column_width=True)  # 'use_column_width=True' adjusts the image width to the column width
+
+# Optionally, you can hide the image's filename and adjust the layout
+st.markdown("### Drumset Image")  # Optional title or description
+st.text("")  # Optional space between title/description and the image
 
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
