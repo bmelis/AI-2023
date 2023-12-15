@@ -176,7 +176,27 @@ if st.button("Start Training"):
     val_ds = test_datagen.flow_from_directory('resources/data/test_set/', target_size=(128, 128), batch_size=32, seed=123, class_mode='categorical')
 
     model = Sequential()
-    # ... Your model architecture ...
+    model.add(Conv2D(32, (3, 3), input_shape = (128, 128, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(64,64,3)))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(32, (3, 3), activation = 'relu', input_shape=(32,32,3)))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(32, (3, 3), activation = 'relu', input_shape=(16,16,3)))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(Dropout(0.2))
+
+    model.add(Flatten())
+    model.add(Dense(32,activation="relu"))
+
+    model.add(Dense(5,activation="softmax"))
+
 
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
