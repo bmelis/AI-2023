@@ -30,15 +30,18 @@ st.text("Laten we beginnen met een kijkje te nemen naar de data, hier is een van
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
-epochs = st.slider("Seleer het aantal images::", min_value=1, max_value=7, value=8)
+epochs = st.slider("Seleer het aantal epochs:", min_value=1, max_value=7, value=8)
 
 st.text("Helaas heb ik het aantal epochs moeten limiteren op 8 voor de Streamlit versie.")
 st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties stuurt,")
 st.text("crashed de applicatie wanneer het begint met het model te trainen.")
 st.text("Daarom gebruik ik hier een model tot max 8 epochs, zodat de essentie wel duidelijk word.")
+st.text("")
+
 
 st.text("Laten we beginnen met de training:")
 if st.button("Start Training"):
+    st.text("")
     st.text("The training is gestart!")
 
     train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
@@ -73,6 +76,8 @@ if st.button("Start Training"):
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
     history = model.fit_generator(train_ds, steps_per_epoch=30, epochs=epochs, validation_data=val_ds)
+    st.text("")
+    st.text("")
 
     test_loss, test_acc = model.evaluate(val_ds)
     def plotLosses(history):
