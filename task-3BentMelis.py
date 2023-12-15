@@ -25,7 +25,7 @@ image_path = "resources/data/train_set/drumset_white_background/drumset white ba
 image = Image.open(image_path)
 
 # Streamlit app
-st.title("Epoch Trainer App")
+st.title("Taak DL - Bent Melis (r0831245)")
 
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
