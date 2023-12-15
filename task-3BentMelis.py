@@ -26,17 +26,22 @@ image = Image.open(image_path)
 class_names = ["drumset", "guitar", "piano", "saxophone", "violin"]
 st.title("Taak DL - Bent Melis (r0831245)")
 
+st.text("Laten we beginnen met een kijkje te nemen naar de data, hier is een van de images:")
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
 epochs = st.slider("Select the number of epochs:", min_value=1, max_value=30, value=20)
 
 if st.button("Start Training"):
+    st.text("The training has started!")
     train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
     test_datagen = ImageDataGenerator(rescale=1./255)
 
     train_ds = test_datagen.flow_from_directory('resources/data/train_set/', target_size=(128, 128), batch_size=32, seed=123, class_mode="categorical")
     val_ds = test_datagen.flow_from_directory('resources/data/test_set/', target_size=(128, 128), batch_size=32, seed=123, class_mode='categorical')
+
+    st.text(train_ds)
+    st.text(val_ds)
 
     model = Sequential()
     model.add(Conv2D(32, (3, 3), input_shape = (128, 128, 3), activation='relu'))
