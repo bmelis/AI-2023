@@ -30,10 +30,16 @@ st.text("Laten we beginnen met een kijkje te nemen naar de data, hier is een van
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
-epochs = st.slider("Select the number of epochs:", min_value=1, max_value=30, value=20)
+epochs = st.slider("Seleer het aantal images::", min_value=1, max_value=7, value=20)
 
+st.text("Helaas heb ik het aantal epochs moeten limiteren op 8 voor de Streamlit versie.")
+st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties stuurt,")
+st.text("crashed de applicatie wanneer het begint met het model te trainen.")
+st.text("Daarom gebruik ik hier een model tot max 8 epochs, zodat de essentie wel duidelijk word.")
+
+st.text("Laten we beginnen met de training:")
 if st.button("Start Training"):
-    st.text("The training has started!")
+    st.text("The training is gestart!")
 
     train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
     test_datagen = ImageDataGenerator(rescale=1./255)
@@ -77,10 +83,9 @@ if st.button("Start Training"):
         plt.xlabel('epoch')
         plt.legend(['train', 'validation'], loc='upper left')
         plt.show()
+    st.text("Laten we kijken of de testen goed zijn!")
     st.text(f"Validation accuracy: {test_acc}")
     st.pyplot(plotLosses(history))
-
-
 
     y_pred_probabilities = model.predict(val_ds)
     y_pred = np.argmax(y_pred_probabilities, axis=1)
