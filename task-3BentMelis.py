@@ -1,4 +1,3 @@
-#ik leg de library toe als ik hem gebruik in de code!
 import os
 import matplotlib.pyplot as plt
 import numpy as np
@@ -30,12 +29,9 @@ st.title("Taak DL - Bent Melis (r0831245)")
 image_width = 300
 st.image(image, width=image_width, caption="Drumset Image")
 
-# Slider for selecting the number of epochs
-epochs = st.slider("Select the number of epochs:", min_value=1, max_value=100, value=20)
+epochs = st.slider("Select the number of epochs:", min_value=1, max_value=30, value=20)
 
-# Button to start training
 if st.button("Start Training"):
-    # Your training code here
     train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
     test_datagen = ImageDataGenerator(rescale=1./255)
 
