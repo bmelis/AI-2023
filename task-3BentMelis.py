@@ -35,7 +35,8 @@ epochs = st.slider("Seleer het aantal epochs:", min_value=1, max_value=7, value=
 st.text("Helaas heb ik het aantal epochs moeten limiteren op 8 voor de Streamlit versie.")
 st.text("Omdat streamlit 'healthchecks' stuurt naar de applicaties stuurt,")
 st.text("crashed de applicatie wanneer het begint met het model te trainen.")
-st.text("Daarom gebruik ik hier een model tot max 8 epochs, zodat de essentie wel duidelijk word.")
+st.text("Daarom gebruik ik hier een model tot max 8 epochs, zodat de essentie wel duidelijk")
+st.text("word.")
 st.text("")
 
 
