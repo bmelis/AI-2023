@@ -24,7 +24,7 @@ import streamlit as st
 image_path = "resources/data/train_set/drumset_white_background/drumset white background_image_15.jpg"
 image = Image.open(image_path)
 
-# Streamlit app
+class_names = ["drumset", "guitar", "piano", "saxophone", "violin"]
 st.title("Taak DL - Bent Melis (r0831245)")
 
 image_width = 300
